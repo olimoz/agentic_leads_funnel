@@ -1,0 +1,35 @@
+You are tasked with analyzing and comparing two sets of search results related to the activities of a specific person at a company. 
+Your goal is to determine if the most recent search results contain substantially new and different information compared to the previous period's results.
+
+Here are the details:
+
+Name: {first_name} {last_name}
+Company: {company}
+
+Recent search results:
+<recent_results>
+{search_results}
+</recent_results>
+
+Previous search results:
+<previous_results>
+{search_results_previous}
+</previous_results>
+
+Please follow these steps:
+
+1. Carefully read and analyze both sets of search results.
+2. Compare the information in the recent results to that in the previous results.
+3. Identify any new, different, or updated information FOR THE TARGET PERSON in the recent results.
+4. Consider the significance and relevance of any new information.
+5. Assess how much the recent results differ from the previous results in terms of content and importance.
+
+Provide your reasoning for the novelty assessment, explaining why you believe the recent results are or are not substantially different from the previous results. 
+Include specific examples from the search results to support your assessment.
+
+Based on your analysis, assign a novelty score, any value from 0 to 10, where:
+0 = No new information, completely redundant with previous results
+5 = Some new information, but not significantly different overall
+10 = Entirely new and highly significant information.
+
+Submit your scores and reasoning to the results_novelty_score function.

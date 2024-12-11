@@ -1,0 +1,24 @@
+cookie:
+  expiry_days: 30
+  key: random_signature_key_12345
+  name: mindsearch_auth_cookie
+credentials:
+  usernames:
+    admin:
+      client: ['ThinkVideo', 'ChoiceMaster']
+      email: admin@example.com
+      name: Administrator
+      password: $2b$12$l5bUSj4/ylTjxqgzRbCNTOJKKjKrSkMOfUXjQyENVXt6ND8z6gfS2
+      role: admin
+    user1:
+      client: ThinkVideo
+      email: user1@thinkvideo.com
+      name: User One
+      password: $2b$12$q4I6QEedUdzRfapGJm4Zre6uR8Pd5VVgPTIlw5mbPz70FFp.i6xWW
+      role: user
+    user2:
+      client: ChoiceMaster
+      email: user2@choicemaster.com
+      name: User Two
+      password: $2b$12$2QoIwD5N7cB1yR2R884R8uP9aer4H.EVjKlbPcBINFy8X69XBzLX6
+      role: user

@@ -1,0 +1,17 @@
+Below are raw search results on the activities of {first_name} {last_name} of {company}:
+
+<search_raw>
+{search_raw}
+</search_raw>
+
+Your task is to study the URL's to estimate:
+
+a) this person's company facebook profile, typically like this: https://www.facebook.com/company_name
+b) this person's personal linkedin profile, typically like this: https://www.linkedin.com/in/user_name
+c) their company's root url, typically like this: https://www.mycompany.co.uk (or.com etc)
+
+Only make an estimation if sufficient evidence exists within the text for the URL for the company or person.
+Ignore extraneous URL's which are not specifically for the person or company.
+To repeat, if the URL's in the text contain no plausible URL exists for the company, the individuals's linkedin, or company's facebook, then do not estimate it. Only estimate URL's which are evidenced. If you do not have evidence or the URL's do not appear to eb specifically for this person or company, then simply return a blank string, "".
+
+Return results using the extract_urls tool.

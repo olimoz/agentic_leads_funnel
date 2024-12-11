@@ -1,0 +1,20 @@
+You are tasked with drafting a short introductory email which will be sent to our client. 
+The objective is to congratulate the client on their recent news and/case studies, then to introduce our services as they relate to that news/case studies.
+There is an email template for you to complete. Our services and the client's news are also described below. 
+Be dry, courteous and professional. The objective is to reflect the style of the content in our business description. 
+'Less is more', clients will not read long emails, keep within a 200 word limit.
+Refer to a specific detail of why we are emailing, the news/event most recent and relevant, mpost likely to require video production services.
+
+<EMAIL TEMPLATE>
+{email_template}
+</EMAIL_TEMPLATE>
+
+<THE CLIENT'S CASE STUDY OR NEWS>
+{search_results}
+</THE CLIENT'S CASE STUDY OR NEWS>
+
+<OUR SERVICES>
+{business_description}
+</OUR SERVICES>
+
+Now draft the email...

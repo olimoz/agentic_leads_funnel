@@ -1,0 +1,72 @@
+sequenceDiagram
+    participant Client
+    participant WebResearchApp
+    participant ClientManager
+    participant CandidatePipeline
+    participant SearchAgents
+    participant AnalysisAgents
+    participant EmailManager
+    participant StorageManager
+    participant DataManager
+
+    Client->>WebResearchApp: Start Research
+    activate WebResearchApp
+    WebResearchApp->>ClientManager: Process Client Request
+    activate ClientManager
+    
+    ClientManager->>DataManager: Load Client Config
+    activate DataManager
+    DataManager->>StorageManager: Read Config Files
+    StorageManager-->>DataManager: Config Data
+    DataManager-->>ClientManager: Client Configuration
+    deactivate DataManager
+
+    ClientManager->>CandidatePipeline: Initialize Search
+    activate CandidatePipeline
+    
+    CandidatePipeline->>SearchAgents: Generate Search Queries
+    activate SearchAgents
+    Note over SearchAgents: SearchProposalAgent
+    SearchAgents-->>CandidatePipeline: Search Queries
+    
+    loop For Each Search Engine
+        CandidatePipeline->>SearchAgents: Execute Search
+        Note over SearchAgents: BraveAgent,<br/>PerplexityAgent,<br/>TavilyAgent
+        SearchAgents-->>CandidatePipeline: Search Results
+    end
+    deactivate SearchAgents
+
+    CandidatePipeline->>AnalysisAgents: Extract URLs
+    activate AnalysisAgents
+    Note over AnalysisAgents: URLextractionAgent
+    AnalysisAgents-->>CandidatePipeline: Extracted URLs
+
+    CandidatePipeline->>AnalysisAgents: Calculate Target Score
+    Note over AnalysisAgents: TargetScoreAgent
+    AnalysisAgents-->>CandidatePipeline: Target Scores
+
+    CandidatePipeline->>AnalysisAgents: Compare Results
+    Note over AnalysisAgents: ResultsComparisonAgent
+    AnalysisAgents-->>CandidatePipeline: Comparison Analysis
+    deactivate AnalysisAgents
+
+    CandidatePipeline->>DataManager: Store Results
+    activate DataManager
+    DataManager->>StorageManager: Write Results
+    StorageManager-->>DataManager: Storage Confirmation
+    deactivate DataManager
+
+    CandidatePipeline-->>ClientManager: Search Complete
+    deactivate CandidatePipeline
+
+    ClientManager->>EmailManager: Generate Email
+    activate EmailManager
+    Note over EmailManager: EmailProposalAgent
+    EmailManager-->>ClientManager: Email Generated
+    deactivate EmailManager
+
+    ClientManager-->>WebResearchApp: Process Complete
+    deactivate ClientManager
+    
+    WebResearchApp-->>Client: Research Results
+    deactivate WebResearchApp

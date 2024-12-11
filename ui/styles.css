@@ -1,0 +1,87 @@
+/* Button styling */
+[data-testid="stButton"] button[kind="secondary"]:nth-child(odd) {
+    background-color: #e47c0d !important;
+    color: white !important;
+}
+
+[data-testid="stButton"] button[kind="secondary"]:nth-child(even) {
+    background-color: #3c8b97 !important;
+    color: white !important;
+}
+
+/* Text area styling - with enhanced resizing */
+[data-testid="stTextArea"] textarea {
+    min-height: 200px !important;
+    max-height: 800px !important;
+    height: auto !important;
+    resize: vertical !important;
+    overflow-y: auto !important;
+    transition: height 0.1s ease-in-out;
+}
+
+[data-testid="stTextArea"] [data-baseweb="textarea"] {
+    min-height: 200px !important;
+    height: auto !important;
+    resize: vertical !important;
+}
+
+/* Add a visual indicator for the resize handle */
+[data-testid="stTextArea"] textarea::-webkit-resizer {
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #e47c0d #e47c0d transparent;
+}
+
+/* Add a visual indicator for the resize handle */
+[data-testid="stTextArea"] textarea::-webkit-resizer {
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #e47c0d #e47c0d transparent;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 14px !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Odd numbered expanders - light orange */
+div[data-testid="stExpander"]:nth-of-type(odd) .streamlit-expanderHeader {
+    background-color: #fcebc9;
+}
+div[data-testid="stExpander"]:nth-of-type(odd) .streamlit-expanderContent {
+    background-color: #fcebc9;
+}
+
+/* Even numbered expanders - light blue */
+div[data-testid="stExpander"]:nth-of-type(even) .streamlit-expanderHeader {
+    background-color: #c4dcdc;
+}
+div[data-testid="stExpander"]:nth-of-type(even) .streamlit-expanderContent {
+    background-color: #c4dcdc;
+}
+
+.streamlit-expanderHeader:hover {
+    filter: brightness(0.95);
+}
+
+.streamlit-expanderContent {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 15px !important;
+}
+
+/* Funnel image styling */
+.sidebar-funnel {
+    width: 100%;
+    margin-top: 20px;
+}
+.sidebar-funnel img {
+    width: 100%;
+    height: auto;
+}

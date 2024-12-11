@@ -1,0 +1,31 @@
+# Configuration folder for the web search client
+CLIENT: "ChoiceMaster"
+
+# The LLM chosen for search suggestions can be simple, cheap and fast
+LLM_SEARCH: "gpt-4o-mini"
+
+# The LLM chosen for email drafting is more rarely used and can afford to be higher quality
+LLM_EMAIL: "gpt-4o"
+
+# Batch size is the number of contacts to be searched on the daily execution of the app. Keep low for testing!
+BATCH_SIZE: 6
+
+# Mini batch size is the number of concurrent searches, works best if 2, Perplexity is the limiting factor due api call limits
+MINI_BATCH_SIZE: 2
+
+# max perplexity searches MUST > 1. If you want 1, then change the prompt in the search agent which expects at least 2.
+MAX_PPLX_SEARCHES: 2
+
+# Tavily is expensive but provides a 'second opinion', can be switched off if by setting to 0 (ZERO)
+MAX_TAVILY_SEARCHES: 3
+
+# The update report of best contacts for emailing will be sent to the batch recipient on the below schedule...
+EMAIL_USER: "oliver.morris@agentico.ai"
+EMAIL_BATCH_RECIPIENT: "oliver.morris@agentico.ai"
+MAX_EMAILS: 3
+EMAIL_DAYS_OF_WEEK: ['Thursday', 'Friday']
+
+# Can optionally require each email to be sent individually as an email to the above batch recipient. I set to false.
+SEND_PROPOSED_EMAILS: false
+
+

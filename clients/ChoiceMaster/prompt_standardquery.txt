@@ -1,0 +1,1 @@
+{candidate.first_name} {candidate.last_name}, {candidate.company} official blog or case studies {search_period}

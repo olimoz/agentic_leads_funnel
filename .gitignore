@@ -1,0 +1,5 @@
+__pycache__/
+.vscode/
+.env
+clients/ChoiceMaster/.env
+clients/ThinkVideo/.env

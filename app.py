@@ -294,7 +294,7 @@ class WebResearchApp:
         self.logger.info(f"Created {len(self.client_managers)} client tasks")
         return
 
-    def timing_decorator(self, func          ):
+    def timing_decorator(self, func):
         """
         A DECORATOR that logs the start and end time of the decorated function,
         as well as its total execution time. If an exception occurs, it logs

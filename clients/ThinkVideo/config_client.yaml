@@ -23,7 +23,7 @@ MAX_TAVILY_SEARCHES: 3
 EMAIL_USER: "oliver.morris@agentico.ai"
 EMAIL_BATCH_RECIPIENT: "oliver.morris@agentico.ai"
 MAX_EMAILS: 3
-EMAIL_DAYS_OF_WEEK: ['Thursday', 'Friday']
+EMAIL_DAYS_OF_WEEK: ['Wednesday', 'Friday']
 
 # Can optionally require each email to be sent individually as an email to the above batch recipient. I set to false.
 SEND_PROPOSED_EMAILS: false

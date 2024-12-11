@@ -1,13 +1,29 @@
-import boto3
-from botocore.exceptions import ClientError
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.application import MIMEApplication
+import os
+import re
+import io
+import asyncio
+import logging
 import pandas as pd
 from datetime import datetime
-import os
+
+# reporting and email sending
+import boto3
+from botocore.exceptions import ClientError
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import mimetypes
+
+# document writing
 from docx import Document
 from docx.shared import Pt
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+from docx.opc.constants import RELATIONSHIP_TYPE
+from docx.oxml.shared import OxmlElement, qn
+
+# internally
 from agents.results_ranking import SearchResultsRankingAgent
 
 #======================================================================================

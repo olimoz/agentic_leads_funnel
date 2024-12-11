@@ -1,0 +1,62 @@
+2024-12-11 22:36:07,754 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-11 22:36:07,757 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-11 22:36:07,759 - app - INFO - Checking pricing for model: tavily
+2024-12-11 22:36:07,763 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-11 22:36:07,765 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-11 22:36:07,767 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-11 22:36:07,769 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-11 22:36:07,769 - app - INFO - Pricing sequentiality check completed.
+2024-12-11 22:36:07,812 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-11 22:36:07,957 - app - INFO - Created 1 client tasks
+2024-12-11 22:36:07,989 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-11 22:36:10,571 - app - INFO - Batch cost saved to ThinkVideo_20241201_20241211.xlsx
+2024-12-11 22:36:10,572 - app - INFO - Total cost for the period: $0.61
+2024-12-11 22:36:10,573 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-11 22:36:14,544 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-11 22:36:14,622 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-11 22:36:14,622 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 602 records
+2024-12-11 22:36:16,248 - app - INFO - There are 7971 valid candidates for search.
+2024-12-11 22:36:16,270 - app - INFO - As instructed, this batch will process 6.
+2024-12-11 22:36:16,271 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 22:36:16,271 - app - INFO - - Processing: Laura Edwards, Alexandra Wren Marketing Consultants
+2024-12-11 22:36:16,314 - app - INFO - - Processing: Paul Evans, Collins Aerospace
+2024-12-11 22:36:49,372 - app - INFO - Finished Processing: Paul Evans, Collins Aerospace
+2024-12-11 22:36:49,423 - app - INFO - Finished Processing: Laura Edwards, Alexandra Wren Marketing Consultants
+2024-12-11 22:36:49,425 - app - INFO - Completed processing mini batch starting at index 0
+2024-12-11 22:36:49,426 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 22:36:49,428 - app - INFO - - Processing: Claire Taylforth, FaberExposize UK
+2024-12-11 22:36:49,465 - app - INFO - - Processing: Andy Lewis, Harper Adams University
+2024-12-11 22:37:20,730 - app - INFO - Finished Processing: Claire Taylforth, FaberExposize UK
+2024-12-11 22:37:21,575 - app - INFO - Finished Processing: Andy Lewis, Harper Adams University
+2024-12-11 22:37:21,577 - app - INFO - Completed processing mini batch starting at index 2
+2024-12-11 22:37:21,577 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 22:37:21,578 - app - INFO - - Processing: Alex Hardie, Harper Adams University
+2024-12-11 22:37:21,636 - app - INFO - - Processing: Joel Stone, Codebreak
+2024-12-11 22:37:48,676 - app - INFO - Finished Processing: Joel Stone, Codebreak
+2024-12-11 22:37:56,188 - app - INFO - Finished Processing: Alex Hardie, Harper Adams University
+2024-12-11 22:37:56,189 - app - INFO - Completed processing mini batch starting at index 4
+2024-12-11 22:37:56,205 - app - INFO - Converting search_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_consumption.parquet
+2024-12-11 22:37:56,284 - app - INFO - Converting email_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_search_history.parquet
+2024-12-11 22:37:56,356 - app - INFO - Completed batch of searches
+2024-12-11 22:37:56,357 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-11 22:37:56,357 - app - INFO - Start email processing...
+2024-12-11 22:37:56,394 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-11 22:37:57,761 - app - INFO - Email candidates selected, Qty=3
+2024-12-11 22:37:57,773 - app - INFO - Email actions planned:
+    first_name  last_name                  company                search_date
+604     Claire  Taylforth         FaberExposize UK 2024-12-11 22:36:49.429165
+606       Alex     Hardie  Harper Adams University 2024-12-11 22:37:21.579217
+607       Joel      Stone                Codebreak 2024-12-11 22:37:21.636582
+2024-12-11 22:37:57,774 - app - INFO - Processing email for Claire Taylforth
+2024-12-11 22:37:59,950 - app - INFO - Completed processing email for Claire Taylforth
+2024-12-11 22:37:59,952 - app - INFO - Processing email for Alex Hardie
+2024-12-11 22:38:02,038 - app - INFO - Completed processing email for Alex Hardie
+2024-12-11 22:38:02,039 - app - INFO - Processing email for Joel Stone
+2024-12-11 22:38:04,127 - app - INFO - Completed processing email for Joel Stone
+2024-12-11 22:38:04,382 - app - INFO - Attachment 'leads_report_20241211_2236.docx', from leads_report_20241211_2236.docx, encoded size: 52859 bytes
+2024-12-11 22:38:04,892 - app - INFO - Email has been sent to: oliver.morris@agentico.ai
+2024-12-11 22:38:04,893 - app - INFO - Number of email actions completed: 3
+2024-12-11 22:38:04,920 - app - INFO - Processing complete for : ThinkVideo
+2024-12-11 22:38:04,931 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-11 22:39:35,136 - app - INFO - Batch cost saved to ThinkVideo_20240830_20241211.xlsx
+2024-12-11 22:39:35,137 - app - INFO - Total cost for the period: $19.90

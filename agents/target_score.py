@@ -25,7 +25,7 @@ class TargetScoreAgent(AgentBase):
         try:
 
             # Define the prompt template
-            prompt_text = self.prompt_from_file(os.path.join(client,'prompt_targetscoreagent.txt'))
+            prompt_text = self.prompt_from_file('prompt_targetscoreagent.txt', client=client)
 
             # Define tools for scoring
             tools = [{

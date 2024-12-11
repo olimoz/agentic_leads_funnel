@@ -25,7 +25,7 @@ class LoggerConfig:
             logging.CRITICAL: ErrorAction.TERMINATE # Therefore, any troublesome errors must be flagged as CRITICAL to stop process
         }
         self.max_retries  = 3
-        self.log_file     = 'app.log'
+        self.log_file     = 'logs/app.log'
         self.max_log_size = 5 * 1024 * 1024  # 5 MB
         self.backup_count = 9  # Keep 9 backup files, plus the current on
 
@@ -33,7 +33,7 @@ class NewFileForEachRunHandler(BaseRotatingHandler):
     def __init__(self, app, filename, mode='a', encoding=None, delay=False, max_files=10):
         self.app = app
         self.storage_manager = app.storage_manager
-        self.base_filename = filename
+        self.base_filename = os.path.join('logs', os.path.basename(filename))
         self.max_files = max_files
         timestamp = int(time.time())
         self.current_filename = f"{os.path.splitext(self.base_filename)[0]}_{timestamp}.log"

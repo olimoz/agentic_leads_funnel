@@ -24,9 +24,9 @@ class EmailProposalAgent(AgentBase):
                 - email_content (str): The generated email content.
                 - consumption (Dict[str, Any]): Details of resource consumption.
         """
-        business_description = self.prompt_from_file(f"{client}/{self.app.config['BUSINESS_DESCRIPTION_FILENAME']}")
-        email_template = self.prompt_from_file(f"{client}/{self.app.config['EMAIL_TEMPLATE_FILENAME']}")
-        prompt_text = self.prompt_from_file(f"{client}/prompt_emailproposalagent.txt")
+        business_description = self.prompt_from_file(self.app.config['BUSINESS_DESCRIPTION_FILENAME'], client=client)
+        email_template = self.prompt_from_file(self.app.config['EMAIL_TEMPLATE_FILENAME'], client=client)
+        prompt_text = self.prompt_from_file("prompt_emailproposalagent.txt", client=client)
 
         prompt = ChatPromptTemplate.from_template(prompt_text)
         chain = RunnableSequence(prompt, llm)

@@ -29,7 +29,7 @@ class DataManager:
         self.app = app
         self.storage_manager = app.storage_manager
 
-    def load_df_search_tasks(self, file_path, required_fields=['First Name', 'Last Name', 'Company', 'Position'], sort_by=['First Name', 'Last Name', 'Company']):
+    def load_df_search_tasks(self, file_path, client, required_fields=['First Name', 'Last Name', 'Company', 'Position'], sort_by=['First Name', 'Last Name', 'Company']):
         """
         Load search tasks from an Excel file and process them.
 
@@ -40,7 +40,7 @@ class DataManager:
         """
         try:
             # Load the file
-            df_search_tasks = self.storage_manager.read_excel(file_path)
+            df_search_tasks = self.storage_manager.read_excel(file_path, client=client)
 
             # Confirm data contains required fields
             missing_fields = [field for field in required_fields if field not in df_search_tasks.columns]
@@ -130,7 +130,7 @@ class DataManager:
 
     # Load previous search history
 
-    def load_or_create_df_search_history(self, file_path):
+    def load_or_create_df_search_history(self, file_path, client):
         """
         Load existing search history or create a new DataFrame if it doesn't exist.
 
@@ -138,7 +138,7 @@ class DataManager:
         :return: DataFrame of search history
         """
         try:
-            df_search_history = self.storage_manager.read_parquet(file_path)
+            df_search_history = self.storage_manager.read_parquet(file_path, client=client)
             self.app.logger.info(f"DataFrame loaded from {file_path}")
             return df_search_history
 

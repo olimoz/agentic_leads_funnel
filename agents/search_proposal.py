@@ -10,7 +10,7 @@ class SearchProposalAgent(AgentBase):
     """
     Agent responsible for generating search queries based on given parameters.
     """
-    async def run(self, llm, params, client     ):
+    async def run(self, llm, params, client):
         """
         Generate search queries based on the provided parameters.
 
@@ -49,7 +49,7 @@ class SearchProposalAgent(AgentBase):
                 'search_sites_string': lambda x: ", ".join(x['search_sites_list'])
             }
 
-            prompt_text = self.prompt_from_file(os.path.join(client,'prompt_searchproposalagent.txt'))
+            prompt_text = self.prompt_from_file('prompt_searchproposalagent.txt', client=client)
 
             # Create the prompt
             prompt = ChatPromptTemplate.from_messages([

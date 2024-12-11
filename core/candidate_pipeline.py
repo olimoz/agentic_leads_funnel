@@ -80,7 +80,7 @@ class CandidatePipeline:
             
             # append the standard query "fred bloggs at ACME ltd offical blog or case studies"
             agent_base = AgentBase(self.app)
-            standard_query_template = agent_base.prompt_from_file(f"{client}/prompt_standardquery.txt", client=None)
+            standard_query_template = agent_base.prompt_from_file("prompt_standardquery.txt", client=client)
             standard_query = standard_query_template.format(candidate=candidate, search_period=search_period)
             search_queries.append(standard_query)
 

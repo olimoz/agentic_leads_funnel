@@ -65,10 +65,12 @@ The process followed by the app is as follows:
 
 ## Data
 
-App root
+app_data folder
 - `subscriptions.xlsx`: Master list of client subscriptions
 - `api_pricing.xlsx`: Master list of API pricing data
 - `config_app.yaml`: App configuration
+
+ui folder
 - `config_login.yaml`: UI authentication configuration
 
 For each client we have a folder of contacts to be searched, ai agent prompts, email templates and results

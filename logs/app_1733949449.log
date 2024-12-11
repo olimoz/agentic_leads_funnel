@@ -1,0 +1,72 @@
+2024-12-11 20:37:30,079 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-11 20:37:30,083 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-11 20:37:30,087 - app - INFO - Checking pricing for model: tavily
+2024-12-11 20:37:30,090 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-11 20:37:30,092 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-11 20:37:30,094 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-11 20:37:30,097 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-11 20:37:30,097 - app - INFO - Pricing sequentiality check completed.
+2024-12-11 20:37:30,138 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-11 20:37:30,285 - app - INFO - Created 1 client tasks
+2024-12-11 20:37:30,323 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-11 20:37:30,357 - app - INFO - Batch cost saved to ThinkVideo_20241201_NoEndDate.xlsx
+2024-12-11 20:37:30,358 - app - INFO - Total cost for the period: $0.00
+2024-12-11 20:37:30,359 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-11 20:37:30,360 - app - ERROR - Error occurred in function 'read_excel' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py' at line 307
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 304, in read_excel
+    return pd.read_excel(full_path, **kwargs)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/ThinkVideo/df_search_tasks.xlsx'
+2024-12-11 20:37:30,362 - app - ERROR - Error occurred in function 'load_df_search_tasks' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/data_manager.py' at line 75
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/data_manager.py", line 43, in load_df_search_tasks
+    df_search_tasks = self.storage_manager.read_excel(file_path)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 304, in read_excel
+    return pd.read_excel(full_path, **kwargs)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 504, in read_excel
+    io = ExcelFile(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/ThinkVideo/df_search_tasks.xlsx'
+2024-12-11 20:37:30,363 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-11 20:37:30,364 - app - ERROR - Error occurred in function 'read_parquet' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py' at line 359
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 356, in read_parquet
+    return pd.read_parquet(full_path)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/ThinkVideo/df_search_history.parquet'
+2024-12-11 20:37:30,365 - app - INFO - error reading client's history file, creating blank
+2024-12-11 20:37:30,378 - app - INFO - Empty DataFrame created with specified structure
+2024-12-11 20:37:30,378 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 0 records
+2024-12-11 20:37:30,379 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/app.py' at line 601
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/app.py", line 588, in run
+    await client_manager.process_client()
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/client_manager.py", line 193, in process_client
+    merged_df = self.data_manager.prepare_searches(df_search_tasks, df_search_history)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/data_manager.py", line 187, in prepare_searches
+    for column in df_search_tasks.columns:
+AttributeError: 'NoneType' object has no attribute 'columns'

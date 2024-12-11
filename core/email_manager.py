@@ -18,7 +18,7 @@ class EmailManager:
     """
     Manages email-related operations including candidate selection for emails and email sending via Amazon SES.
     """
-    def __init__(self, config_client, llm_email, client_folder, app):
+    def __init__(self, config_client, llm_email, client, app):
         """
         Initialize the EmailManager.
 
@@ -29,7 +29,7 @@ class EmailManager:
         self.email_user = config_client['EMAIL_USER']
         self.email_recipient = config_client['EMAIL_BATCH_RECIPIENT']
         self.max_emails = config_client['MAX_EMAILS']
-        self.client_folder = client_folder
+        self.client = client
         self.llm_email = llm_email
         self.app = app
 
@@ -121,7 +121,7 @@ class EmailManager:
                 texts += f'There are {top_score_count} texts. You must return {top_score_count} rankings'
 
                 # get the ranking agent's results
-                batch_rankings, consumption_item = await ranking_agent.run(self.llm_email, texts, self.client_folder)
+                batch_rankings, consumption_item = await ranking_agent.run(self.llm_email, texts, self.client)
 
                 # add the rankings to the list
                 rankings = rankings + batch_rankings
@@ -292,7 +292,7 @@ class EmailManager:
 
         # Use the StorageManager to write the file
         today = self.app.today.strftime("%Y%m%d")
-        self.app.storage_manager.write_file_binary(doc_bytes.getvalue(), attachment_path, self.client_folder)
+        self.app.storage_manager.write_file_binary(doc_bytes.getvalue(), attachment_path, client=self.client)
 
 
     async def send_email(self, email_content, email_subject, attachment_path=None, client=None):

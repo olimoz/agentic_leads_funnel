@@ -62,7 +62,7 @@ class URLextractionAgent(AgentBase):
 
         try:
             # Define the prompt template
-            prompt_text = self.prompt_from_file(os.path.join(client,'prompt_urlextractionagent.txt'))
+            prompt_text = self.prompt_from_file('prompt_urlextractionagent.txt', client=client)
 
             # Create the prompt using ChatPromptTemplate
             prompt = ChatPromptTemplate.from_messages([

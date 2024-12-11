@@ -9,6 +9,7 @@ from config.logger_config import LoggerConfig, NewFileForEachRunHandler, ErrorAc
 
 import logging
 import os
+import sys
 import inspect # For getting the calling frame
 import asyncio # For async ops
 from aiolimiter import AsyncLimiter # For rate limiting
@@ -175,7 +176,7 @@ class WebResearchApp:
                     # Optionally terminate here if max retries are reached
                     # sys.exit(1)
 
-    def read_config_app(self, config_file_path= 'config_app.yaml')                  :
+    def read_config_app(self, config_file_path= 'app_data/config_app.yaml')                  :
         """
         Read and validate configuration from a YAML file.
 
@@ -185,7 +186,7 @@ class WebResearchApp:
 
         Args:
             config_file_path (str): Path to the YAML configuration file. 
-                                    Defaults to 'config_app.yaml'.
+                                    Defaults to 'app_data/config_app.yaml'.
 
         Returns:
             Dict[str, Any]: A dictionary containing the validated configuration.
@@ -285,11 +286,8 @@ class WebResearchApp:
             # print("'Start date is {start_date}, end date is {end_date}')
             if ( start_date and start_date <= today and 
                 (end_date is None or end_date >= today)):
-                client_folder = f"{self.working_directory}/{client}"
-                # print(""Folder is {client_folder}")
                 client_monthly_budget = row.get('monthly_budget')
-                client_manager = ClientManager(self, str(client_folder), float(client_monthly_budget), today)
-                # print("Adding client: {client} via folder {client_folder}")
+                client_manager = ClientManager(self, client=client, client_monthly_budget=float(client_monthly_budget), today=today)
                 if not client_manager.any_errors:
                     self.client_managers.append(client_manager)
 
@@ -458,7 +456,7 @@ class WebResearchApp:
                 return None
 
             # Load consumption data
-            df_consumption = self.storage_manager.read_parquet(consumption_filename)
+            df_consumption = self.storage_manager.read_parquet(consumption_filename, client=client)
             # print('loaded consumption data')
             # Check for models in consumption data not present in pricing data
             consumption_models = set(df_consumption['model'].unique())
@@ -532,7 +530,7 @@ class WebResearchApp:
 
             # Save results
             filename = f"{client}_{start_date}_{end_date}.xlsx"
-            self.storage_manager.to_excel(costs_df, f"{client}/{filename}")
+            self.storage_manager.to_excel(costs_df, filename, client=client)
             self.logger.info(f"Batch cost saved to {filename}")
             
             # Print summary

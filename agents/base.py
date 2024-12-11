@@ -65,7 +65,7 @@ class AgentBase:
         
         if cache_key not in self.prompt_cache:
             try:
-                content = self.storage_manager.read_file(file_path, client)
+                content = self.storage_manager.read_file(file_path, client=client)
                 self.prompt_cache[cache_key] = content
             except Exception as e:
                 msg = f"prompt_from_file, {self.__class__.__name__}: error reading file {file_path}: {str(e)}"

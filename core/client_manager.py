@@ -30,16 +30,16 @@ class ClientManager:
     Manages client-specific operations including configuration, data processing, and email handling.
     There will be one or more clients whose documents we process per execution
     """
-    def __init__(self, app, client_folder, client_monthly_budget, today):
+    def __init__(self, app, client, client_monthly_budget, today):
         """
         Initialize the ClientManager.
 
         Args:
             app (WebResearchApp): The main application instance.
-            client_folder (str): Path to the client's folder.
+            client (str): client name
         """
         self.app = app
-        self.client_folder = client_folder
+        self.client = client
         self.client_monthly_budget = client_monthly_budget
         self.today = today
         self.storage_manager = app.storage_manager
@@ -49,15 +49,15 @@ class ClientManager:
 
         # print(""any errors: {self.any_errors}")
         if not self.any_errors:
-            self.data_manager = DataManager(app)
-            self.email_proposal_agent = EmailProposalAgent(app)
+            self.data_manager = DataManager(self.app)
+            self.email_proposal_agent = EmailProposalAgent(self.app)
             # print("email complete")
             self.llm = self.initialize_llm(model_name = self.config['LLM_SEARCH'])
             # print("init llm complete")
             self.llm_email = self.initialize_llm(model_name = self.config['LLM_EMAIL'])
             # print("init llm_email complete")
-            self.email_manager = EmailManager(self.config, self.llm_email, self.client_folder, app) 
-            self.candidate_pipeline = CandidatePipeline(app, self.config, self.llm, self.llm_email)
+            self.email_manager = EmailManager(self.config, self.llm_email, self.client, self.app) 
+            self.candidate_pipeline = CandidatePipeline(self.app, self.config, self.llm, self.llm_email)
 
     def read_config_client(self):
         """
@@ -72,19 +72,19 @@ class ClientManager:
         config = {}
         # print("reading yaml")
         # Load client's .env file
-        if not self.storage_manager.file_exists(env_file_path, self.client_folder):
+        if not self.storage_manager.file_exists(env_file_path, client=self.client):
             self.app.handle_error(self.app.logger, logging.CRITICAL, f"Client's .env file not found: {env_file_path}")
             any_errors = True
         else:
-            env_content = self.storage_manager.read_file(env_file_path, self.client_folder)
+            env_content = self.storage_manager.read_file(env_file_path, client=self.client)
             load_dotenv(stream=io.StringIO(env_content))
 
         # Load client's yaml file
-        if not self.storage_manager.file_exists(config_file_path, self.client_folder):
+        if not self.storage_manager.file_exists(config_file_path, client=self.client):
             self.app.handle_error(self.app.logger, logging.CRITICAL, f"Client's YAML configuration file not found: {config_file_path}")
             any_errors = True
         else:
-            config_content = self.storage_manager.read_file(config_file_path, self.client_folder)
+            config_content = self.storage_manager.read_file(config_file_path, client=self.client)
             try:
                 config = yaml.safe_load(config_content)
                 print(config)
@@ -150,7 +150,7 @@ class ClientManager:
                 any_errors = True
             config[var] = value
 
-        self.app.logger.info(f"Loaded config for client: {config['CLIENT']}")
+        self.app.logger.info(f"Loaded config for client: {self.client}")
         # print(""Existing config: {config}")
         return config, any_errors
 
@@ -163,32 +163,32 @@ class ClientManager:
 
         # checking for config errors before proceeding
         if self.any_errors:
-            self.app.handle_error(self.app.logger, logging.ERROR, f"Skipping client processing due config errors in folder: {self.client_folder}")
+            self.app.handle_error(self.app.logger, logging.ERROR, f"Skipping client processing due config errors in folder: {self.client}")
             return
 
         # checking for budget before proceeding
-        df_consumption_filepath = self.config['CLIENT'] + '/' + self.app.config['DF_CONSUMPTION_FILENAME']
+        df_consumption_filepath = self.app.config['DF_CONSUMPTION_FILENAME']
         current_month_start = self.today.replace(day=1)
         # print(f'current month start: {current_month_start}')
         costs_month_to_date = self.app.calculate_api_costs( df_consumption_filepath, 
-                                                            self.config['CLIENT'], 
+                                                            self.client, 
                                                             date_from=current_month_start, 
                                                             date_to=None)
 
         costs_month_to_date = min(costs_month_to_date['cost'].sum(),0)
 
         if costs_month_to_date >= self.client_monthly_budget:
-            self.app.logger.warning(f"Monthly budget already exceeded for client {self.config['CLIENT']}. Stopping processing.")
+            self.app.logger.warning(f"Monthly budget already exceeded for client {self.client}. Stopping processing.")
             return
 
         # continue to process client
-        self.app.logger.info(f"Configuring pipeline for: {self.config['CLIENT']} ")
+        self.app.logger.info(f"Configuring pipeline for: {self.client} ")
 
-        df_search_tasks = self.data_manager.load_df_search_tasks(self.config['CLIENT'] + '/' + self.app.config['DF_SEARCH_TASKS_FILENAME'])
-        self.app.logger.info(f"Loaded df_search_tasks for: {self.config['CLIENT']} ")
+        df_search_tasks = self.data_manager.load_df_search_tasks(self.app.config['DF_SEARCH_TASKS_FILENAME'], client=self.client)
+        self.app.logger.info(f"Loaded df_search_tasks for: {self.client} ")
 
-        df_search_history = self.data_manager.load_or_create_df_search_history(self.config['CLIENT'] + '/' + self.app.config['DF_SEARCH_HISTORY_FILENAME'])
-        self.app.logger.info(f"Loaded df_search_history for: {self.config['CLIENT']}. Length: {str(len(df_search_history))} records")
+        df_search_history = self.data_manager.load_or_create_df_search_history(self.app.config['DF_SEARCH_HISTORY_FILENAME'], client=self.client)
+        self.app.logger.info(f"Loaded df_search_history for: {self.client}. Length: {str(len(df_search_history))} records")
 
         merged_df = self.data_manager.prepare_searches(df_search_tasks, df_search_history)
         candidates = self.data_manager.create_candidates_from_dataframe(merged_df)
@@ -204,7 +204,7 @@ class ClientManager:
         searches_all = []
         processed_candidates = set()  # Track which candidates we've already processed
 
-        async with ConsumptionTracker(self.app, self.config['CLIENT']) as tracker:
+        async with ConsumptionTracker(self.app, self.client) as tracker:
 
             # Process each mini batch sequentially
             for i in range(0, len(batch), self.config['MINI_BATCH_SIZE']):
@@ -232,7 +232,7 @@ class ClientManager:
                         tasks.append(
                             self.candidate_pipeline.process(
                                 candidate, 
-                                self.config['CLIENT'], 
+                                self.client, 
                                 semaphore, 
                                 search_limiter_perplexity, 
                                 search_limiter_tavily
@@ -275,10 +275,10 @@ class ClientManager:
                     continue
 
         # Save search history
-        df_searches_filepath = f"{self.config['CLIENT']}/{self.app.config['DF_SEARCH_HISTORY_FILENAME']}"
+        df_searches_filepath = self.app.config['DF_SEARCH_HISTORY_FILENAME']
         if searches_all:
             df_searches = pd.DataFrame([search.to_dict() for search in searches_all])
-            self.storage_manager.append_to_parquet(df_searches, df_searches_filepath)
+            self.storage_manager.append_to_parquet(df_searches, df_searches_filepath, client=self.client)
             msg = f"Completed batch of searches"
             print(msg)
             self.app.logger.info(msg)
@@ -292,7 +292,7 @@ class ClientManager:
         await self.process_emails()
 
         # log completion
-        self.app.logger.info(f"Processing complete for : {self.config['CLIENT']}")
+        self.app.logger.info(f"Processing complete for : {self.client}")
 
     async def process_emails(self):
         """
@@ -304,12 +304,12 @@ class ClientManager:
 
         today = self.app.today
         if today.strftime("%A").lower() in [day.lower() for day in self.config['EMAIL_DAYS_OF_WEEK']]:
-            df_search_history = self.data_manager.load_or_create_df_search_history(self.config['CLIENT'] + '/' + self.app.config['DF_SEARCH_HISTORY_FILENAME'])
+            df_search_history = self.data_manager.load_or_create_df_search_history(self.app.config['DF_SEARCH_HISTORY_FILENAME'], client=self.client)
             df_email_candidates, consumption_get_email_candidates = await self.email_manager.get_email_candidates(df_search_history)
 
             # convert consumption to dataframe
             df_consumption_a = pd.DataFrame(consumption_get_email_candidates)
-            df_consumption_a['client'] = self.config['CLIENT']
+            df_consumption_a['client'] = self.client
             df_consumption_a['search_date'] = np.datetime64(self.app.today, 'us')
             columns = ['client', 'search_date'] + [col for col in df_consumption_a.columns if col not in ['client', 'search_date']]
             df_consumption_a = df_consumption_a[columns]
@@ -354,7 +354,7 @@ class ClientManager:
                     df_search_history.loc[update['index'], update['columns']] = update['values']
 
                 # save the updated file (Will get big over time!)
-                self.storage_manager.to_parquet(df_search_history, self.config['CLIENT'] + '/' + self.app.config['DF_SEARCH_HISTORY_FILENAME'])
+                self.storage_manager.to_parquet(df_search_history, self.app.config['DF_SEARCH_HISTORY_FILENAME'], client=self.client)
 
                 if not self.config['SEND_PROPOSED_EMAILS']:
                     
@@ -366,7 +366,7 @@ class ClientManager:
                 self.app.logger.info(msg)
 
                 # convert consumption to dataframe
-                df_consumption_b = pd.DataFrame([{**{'client': self.config['CLIENT'], 'search_date': today}, **email_consumption_total}])
+                df_consumption_b = pd.DataFrame([{**{'client': self.client, 'search_date': today}, **email_consumption_total}])
 
                 # ensure consumption_a and consumption_b have same date format, pandas datetime microseconds (datetime[us]), not nanoseconds
                 df_consumption_b['search_date'] = df_consumption_b['search_date'].astype('datetime64[us]')
@@ -374,10 +374,10 @@ class ClientManager:
                 # pandas concat the two consumptions
                 df_consumption = pd.concat([df_consumption_a, df_consumption_b], axis=0, ignore_index=True)
 
-                self.storage_manager.append_to_parquet(df_consumption, self.config['CLIENT'] + '/' + self.app.config['DF_CONSUMPTION_FILENAME'])
+                self.storage_manager.append_to_parquet(df_consumption, self.app.config['DF_CONSUMPTION_FILENAME'], client=self.client)
 
         else:
-            msg = f"No emails sent. Today is {today.strftime('%A')}, which is not a designated day: {str(self.config['EMAIL_DAYS_OF_WEEK'])} for {self.config['CLIENT']}"
+            msg = f"No emails sent. Today is {today.strftime('%A')}, which is not a designated day: {str(self.config['EMAIL_DAYS_OF_WEEK'])} for {self.client}"
             print(msg)
             self.app.logger.info(msg)
 
@@ -399,7 +399,7 @@ class ClientManager:
             candidate['last_name'],
             candidate['company'],
             candidate['search_results'],
-            self.config['CLIENT']
+            self.client
         )
 
         email_sent_date = self.app.today
@@ -443,18 +443,18 @@ class ClientManager:
         today = self.app.today.strftime("%Y%m%d_%H%M")
 
         # if attachment_path is excel file
-        # attachment_path = f"{self.config['CLIENT']}/{self.app.config['DF_SEARCH_HISTORY_UPDATES_FILENAME']}"
-        # self.storage_manager.to_excel(df_updated_rows, attachment_path)
+        # attachment_path = self.app.config['DF_SEARCH_HISTORY_UPDATES_FILENAME']
+        # self.storage_manager.to_excel(df_updated_rows, attachment_path, client=self.client)
 
         # if attachment_path is docx file
         attachment_path = f"leads_report_{today}.docx"
         self.email_manager.create_word_report(df_updated_rows, attachment_path, searches_since_last_email)
 
-        email_content = self.storage_manager.read_file(f"{self.config['CLIENT']}/{self.app.config['EMAIL_TEMPLATE_SPREADSHEET_FILENAME']}")
+        email_content = self.storage_manager.read_file(self.app.config['EMAIL_TEMPLATE_SPREADSHEET_FILENAME'], client=self.client)
         email_date_as_string = datetime.now().strftime("%d-%b")
         email_subject = f"Proposed Marketing Emails as of {email_date_as_string}"
 
-        msg = await self.email_manager.send_email(email_content, email_subject, attachment_path, self.config['CLIENT'])
+        msg = await self.email_manager.send_email(email_content, email_subject, attachment_path, self.client)
 
         # log the outcome
         self.app.logger.info(msg)
@@ -482,7 +482,7 @@ class ClientManager:
         """
         try:
             if self.any_errors:
-                self.app.handle_error(self.app.logger, logging.ERROR, f"Skipping client run due to configuration errors: {self.client_folder}")
+                self.app.handle_error(self.app.logger, logging.ERROR, f"Skipping client run due to configuration errors: {self.client}")
                 return
 
             await self.process_client()

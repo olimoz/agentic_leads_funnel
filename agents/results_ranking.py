@@ -24,7 +24,7 @@ class SearchResultsRankingAgent(AgentBase):
         try:
 
             # Define the prompt template
-            prompt_text = self.prompt_from_file(os.path.join(client,'prompt_searchresultsrankingagent.txt'))
+            prompt_text = self.prompt_from_file('prompt_searchresultsrankingagent.txt', client=client)
 
             # Define tools for scoring
             tools = [{

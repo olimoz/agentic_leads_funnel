@@ -94,33 +94,38 @@ class StorageManager:
         else:
             logging.warning("Setting working directory has no effect in PROD environment")
 
-
     def get_file_path(self, file_path, client=None):
         """
         Get the full file path for either local or cloud storage.
+        If client is provided, ensures path always includes 'clients/client_name' structure.
 
         Args:
-            file_path (str): The path of the file (can be relative or absolute).
-            client (str, optional): The client name, used as a subfolder.
+            file_path (str): The filename (e.g., 'test.xlsx')
+            client (str, optional): The client name or path. If a path is provided, 
+                                the last component is used as the client name.
 
         Returns:
-            str: The full file path.
+            str: The full file path, ensuring client paths include 'clients/client_name'
         """
         path = Path(file_path)
         
+        if client:
+            # Extract just the client name from any provided path
+            client_name = Path(client).name
+            # Always construct as clients/client_name
+            client_path = Path('clients') / client_name
+        else:
+            client_path = Path('')
+
         if self.environment == 'PROD':
             # For PROD, we always treat the path as relative to the container
-            if client:
-                return str(Path(client) / path)
-            return str(path)
+            return str(client_path / path)
         else:
             # For non-PROD environments
             if path.is_absolute():
-                return str(path)
+                return str(path.parent / client_path / path.name) if client else str(path)
             else:
-                if client:
-                    return str(self.working_directory / client / path)
-                return str(self.working_directory / path)
+                return str(self.working_directory / client_path / path)
 
     def read_file(self, file_path, client=None):
         """

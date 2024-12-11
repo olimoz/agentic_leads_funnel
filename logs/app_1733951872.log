@@ -1,0 +1,100 @@
+2024-12-11 21:17:53,286 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-11 21:17:53,289 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-11 21:17:53,291 - app - INFO - Checking pricing for model: tavily
+2024-12-11 21:17:53,293 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-11 21:17:53,295 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-11 21:17:53,297 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-11 21:17:53,300 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-11 21:17:53,300 - app - INFO - Pricing sequentiality check completed.
+2024-12-11 21:17:53,336 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-11 21:17:53,462 - app - INFO - Created 1 client tasks
+2024-12-11 21:17:53,491 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-11 21:17:53,526 - app - INFO - Batch cost saved to ThinkVideo_20241201_NoEndDate.xlsx
+2024-12-11 21:17:53,527 - app - INFO - Total cost for the period: $0.00
+2024-12-11 21:17:53,528 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-11 21:17:57,321 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-11 21:17:57,366 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-11 21:17:57,367 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 572 records
+2024-12-11 21:17:58,789 - app - INFO - There are 7971 valid candidates for search.
+2024-12-11 21:17:58,807 - app - INFO - As instructed, this batch will process 6.
+2024-12-11 21:17:58,811 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 21:17:58,812 - app - INFO - - Processing: Kieran Patel, BPAi Group
+2024-12-11 21:17:58,863 - app - INFO - - Processing: Syed Ali, Self-employed
+2024-12-11 21:18:31,272 - app - INFO - Finished Processing: Syed Ali, Self-employed
+2024-12-11 21:18:33,194 - app - INFO - Finished Processing: Kieran Patel, BPAi Group
+2024-12-11 21:18:33,195 - app - INFO - Completed processing mini batch starting at index 0
+2024-12-11 21:18:33,195 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 21:18:33,196 - app - INFO - - Processing: Laura Pickin, Lift
+2024-12-11 21:18:33,247 - app - INFO - - Processing: James Hoppe, Cannondale
+2024-12-11 21:19:11,216 - app - INFO - Finished Processing: James Hoppe, Cannondale
+2024-12-11 21:19:12,369 - app - INFO - Finished Processing: Laura Pickin, Lift
+2024-12-11 21:19:12,370 - app - INFO - Completed processing mini batch starting at index 2
+2024-12-11 21:19:12,370 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-11 21:19:12,371 - app - INFO - - Processing: Ashlea Turner, BrewDog
+2024-12-11 21:19:12,420 - app - INFO - - Processing: Natalia Van de Sian, Tyrecon
+2024-12-11 21:19:40,541 - app - INFO - Finished Processing: Ashlea Turner, BrewDog
+2024-12-11 21:19:41,135 - app - INFO - Finished Processing: Natalia Van de Sian, Tyrecon
+2024-12-11 21:19:41,136 - app - INFO - Completed processing mini batch starting at index 4
+2024-12-11 21:19:41,151 - app - ERROR - Error occurred in function 'read_parquet' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py' at line 359
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 356, in read_parquet
+    return pd.read_parquet(full_path)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/ThinkVideo/df_consumption.parquet'
+2024-12-11 21:19:41,170 - app - ERROR - Error occurred in function 'read_parquet' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py' at line 359
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 356, in read_parquet
+    return pd.read_parquet(full_path)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/clients/ThinkVideo/df_search_history.parquet'
+2024-12-11 21:19:41,182 - app - INFO - Completed batch of searches
+2024-12-11 21:19:41,183 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-11 21:19:41,183 - app - INFO - Start email processing...
+2024-12-11 21:19:41,184 - app - INFO - No emails sent. Today is Wednesday, which is not a designated day: ['Thursday', 'Friday'] for ThinkVideo
+2024-12-11 21:19:41,184 - app - INFO - Processing complete for : ThinkVideo
+2024-12-11 21:19:41,189 - app - ERROR - Error occurred in function 'read_parquet' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py' at line 359
+Error message: 50
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 356, in read_parquet
+    return pd.read_parquet(full_path)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/ThinkVideo/df_consumption.parquet'
+2024-12-11 21:19:41,190 - app - ERROR - Error occurred in function 'calculate_api_costs' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/app.py' at line 547
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/app.py", line 459, in calculate_api_costs
+    df_consumption = self.storage_manager.read_parquet(consumption_filename, client=client)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/storage_manager.py", line 356, in read_parquet
+    return pd.read_parquet(full_path)
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/oliver/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/ThinkVideo/df_consumption.parquet'

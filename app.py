@@ -586,7 +586,7 @@ class WebResearchApp:
 
             # Calculate and save API costs for each client
             for client_manager in self.client_managers:
-                consumption_filename = f"{client_manager.config['CLIENT']}/{self.config['DF_CONSUMPTION_FILENAME']}"
+                consumption_filename = self.config['DF_CONSUMPTION_FILENAME']
                 self.calculate_api_costs(
                     consumption_filename=consumption_filename,
                     client=client_manager.config['CLIENT']

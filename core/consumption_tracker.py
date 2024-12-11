@@ -58,8 +58,8 @@ class ConsumptionTracker:
             df_consumption = df_consumption[columns]
             
             # Append to parquet file
-            consumption_filepath = f"{self.client}/{self.app.config['DF_CONSUMPTION_FILENAME']}"
-            self.app.storage_manager.append_to_parquet(df_consumption, consumption_filepath)
+            consumption_filepath = self.app.config['DF_CONSUMPTION_FILENAME']
+            self.app.storage_manager.append_to_parquet(df_consumption, consumption_filepath, client=self.client)
             
     def add_consumption(self, consumption_data):
         """

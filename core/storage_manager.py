@@ -404,7 +404,7 @@ class StorageManager:
         
         try:
             # Try to open existing parquet file
-            existing_df = self.read_parquet(full_path, client)
+            existing_df = self.read_parquet(full_path)
             filenotfound = False
         except FileNotFoundError:
             # If file doesn't exist, use the new dataframe
@@ -429,7 +429,7 @@ class StorageManager:
                 combined_df = pd.concat([existing_df, df], ignore_index=True)
 
         # Write the combined dataframe to parquet
-        self.to_parquet(combined_df, full_path, client)
+        self.to_parquet(combined_df, full_path)
 
     def get_file_modification_time(self, file_path):
         """

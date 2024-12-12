@@ -18,6 +18,7 @@ import pandas as pd  # For DataFrame handling
 from datetime import datetime  # For date handling in pricing
 from pathlib import Path  # For path handling
 from dotenv import load_dotenv # For loading environment variables
+import traceback
 
 class WebResearchApp:
 

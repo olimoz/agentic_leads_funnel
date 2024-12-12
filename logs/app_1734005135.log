@@ -1,0 +1,47 @@
+2024-12-12 12:05:35,457 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-12 12:05:35,459 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-12 12:05:35,461 - app - INFO - Checking pricing for model: tavily
+2024-12-12 12:05:35,463 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-12 12:05:35,465 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-12 12:05:35,466 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-12 12:05:35,468 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-12 12:05:35,468 - app - INFO - Pricing sequentiality check completed.
+2024-12-12 12:05:35,498 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-12 12:05:35,614 - app - INFO - Created 1 client tasks
+2024-12-12 12:05:35,644 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:05:38,803 - app - INFO - Batch cost saved to ThinkVideo_20241201_20241212.xlsx
+2024-12-12 12:05:38,804 - app - INFO - Total cost for the period: $0.85
+2024-12-12 12:05:38,804 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-12 12:05:42,542 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-12 12:05:42,589 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-12 12:05:42,590 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 614 records
+2024-12-12 12:05:44,035 - app - INFO - There are 7971 valid candidates for search.
+2024-12-12 12:05:44,055 - app - INFO - As instructed, this batch will process 6.
+2024-12-12 12:05:44,056 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:05:44,057 - app - INFO - - Processing: Rebecca Clinton-Floyed, Cradle Earth
+2024-12-12 12:05:44,098 - app - INFO - - Processing: Lynne Thomas (The Business Builder), The Business Builder Online
+2024-12-12 12:06:16,683 - app - INFO - Finished Processing: Lynne Thomas (The Business Builder), The Business Builder Online
+2024-12-12 12:06:23,737 - app - INFO - Finished Processing: Rebecca Clinton-Floyed, Cradle Earth
+2024-12-12 12:06:23,738 - app - INFO - Completed processing mini batch starting at index 0
+2024-12-12 12:06:23,738 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:06:23,739 - app - INFO - - Processing: Matt Heaton, The Recruiting Co
+2024-12-12 12:06:23,784 - app - INFO - - Processing: Ryan Gregory, Ducati North Europe
+2024-12-12 12:06:52,007 - app - INFO - Finished Processing: Matt Heaton, The Recruiting Co
+2024-12-12 12:06:52,524 - app - INFO - Finished Processing: Ryan Gregory, Ducati North Europe
+2024-12-12 12:06:52,524 - app - INFO - Completed processing mini batch starting at index 2
+2024-12-12 12:06:52,525 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:06:52,525 - app - INFO - - Processing: Helen Strother - PR and Content Creator, Plume PR Ltd
+2024-12-12 12:06:52,564 - app - INFO - - Processing: Adam Beardmore, TOP-TEC / Dalen Limited
+2024-12-12 12:07:18,113 - app - INFO - Finished Processing: Helen Strother - PR and Content Creator, Plume PR Ltd
+2024-12-12 12:07:22,017 - app - INFO - Finished Processing: Adam Beardmore, TOP-TEC / Dalen Limited
+2024-12-12 12:07:22,017 - app - INFO - Completed processing mini batch starting at index 4
+2024-12-12 12:07:22,039 - app - INFO - Converting search_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_consumption.parquet
+2024-12-12 12:07:22,124 - app - INFO - Converting email_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_search_history.parquet
+2024-12-12 12:07:22,189 - app - INFO - Completed batch of searches
+2024-12-12 12:07:22,189 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-12 12:07:22,189 - app - INFO - Start email processing...
+2024-12-12 12:07:22,190 - app - INFO - No emails sent. Today is Thursday, which is not a designated day: ['Wednesday', 'Friday'] for ThinkVideo
+2024-12-12 12:07:22,190 - app - INFO - Processing complete for : ThinkVideo
+2024-12-12 12:07:22,198 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:08:41,632 - app - INFO - Batch cost saved to ThinkVideo_20240830_20241212.xlsx
+2024-12-12 12:08:41,632 - app - INFO - Total cost for the period: $20.14

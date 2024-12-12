@@ -5,12 +5,13 @@ from langchain_core.prompts import ChatPromptTemplate
 from agents.base import AgentBase
 import ast
 import logging
+from tenacity import retry, stop_after_attempt, wait_random_exponential  # for exponential backoff
 
 class PerplexityAgent(AgentBase):
     """
     Agent for performing searches using the Perplexity API.
     """
-    from tenacity import retry, stop_after_attempt, wait_random_exponential  # for exponential backoff
+    
     @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
     async def run(self, search_query, temperature=0):
         """
@@ -32,32 +33,20 @@ class PerplexityAgent(AgentBase):
             response = await chain.ainvoke({"input": search_query})
             
             #citations = response.model_extra.get("citations")
-            
+            #citations = response.additional_kwargs['citations']
+            #print(f"Perp citations: {response.additional_kwargs['citations']}")
+
+            # Extract citations directly from additional_kwargs
+            citations = response.additional_kwargs.get('citations', [])
+
             # Extract content
-            def response_extraction(item, use_string):
-                if isinstance(response, dict) and item in response:
-                    item_value = response[item]
-                elif hasattr(response, item):
-                    item_value = getattr(response, item)
-                elif use_string: 
-                    item_value = str(response)
-                else:
-                    item_value = '[]'
-                return item_value
+            content = response.content if hasattr(response, 'content') else str(response)
 
-            content   = response_extraction('content', use_string=True)
-            citations = response_extraction('citations', use_string=False)
-
-            if type(citations) == str:
-                citations = ast.literal_eval(citations)
-
-            if type(citations) == list:
-                citation_text = ""
-                for index, url in enumerate(citations, start=1):
-                    citation = f"{index}, {url}\n"
-                    citation_text = citation_text+citation
-
+            # Format citations if they exist
+            if citations:
+                citation_text = "\n".join(f"{index}, {url}" for index, url in enumerate(citations, start=1))
                 content = content + "\n\n" + citation_text
+                print(f"Citations: {citation_text}")
 
             # Log consumption
             consumption = await self.log_consumption(

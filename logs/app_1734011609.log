@@ -1,0 +1,45 @@
+2024-12-12 13:53:29,594 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-12 13:53:29,596 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-12 13:53:29,598 - app - INFO - Checking pricing for model: tavily
+2024-12-12 13:53:29,600 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-12 13:53:29,601 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-12 13:53:29,602 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-12 13:53:29,604 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-12 13:53:29,604 - app - INFO - Pricing sequentiality check completed.
+2024-12-12 13:53:29,635 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-12 13:53:29,753 - app - INFO - Created 1 client tasks
+2024-12-12 13:53:29,783 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 13:53:33,093 - app - INFO - Batch cost saved to ThinkVideo_20241201_20241212.xlsx
+2024-12-12 13:53:33,093 - app - INFO - Total cost for the period: $0.98
+2024-12-12 13:53:33,094 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-12 13:53:36,585 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-12 13:53:36,684 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-12 13:53:36,684 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 620 records
+2024-12-12 13:53:38,067 - app - INFO - There are 7971 valid candidates for search.
+2024-12-12 13:53:38,087 - app - INFO - As instructed, this batch will process 6.
+2024-12-12 13:53:38,087 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 13:53:38,088 - app - INFO - - Processing: Thomas Harrison, PR Projects
+2024-12-12 13:53:38,128 - app - INFO - - Processing: Robert Jenkins, Informa
+2024-12-12 13:54:13,502 - app - INFO - Finished Processing: Robert Jenkins, Informa
+2024-12-12 13:54:16,758 - app - INFO - Finished Processing: Thomas Harrison, PR Projects
+2024-12-12 13:54:16,759 - app - INFO - Completed processing mini batch starting at index 0
+2024-12-12 13:54:16,759 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 13:54:16,760 - app - INFO - - Processing: Adam Buckland, Reed
+2024-12-12 13:54:16,789 - app - INFO - - Processing: Lauren Dale, White Label Digital Services
+2024-12-12 13:54:44,605 - app - INFO - Finished Processing: Lauren Dale, White Label Digital Services
+2024-12-12 13:54:51,902 - app - INFO - Finished Processing: Adam Buckland, Reed
+2024-12-12 13:54:51,903 - app - INFO - Completed processing mini batch starting at index 2
+2024-12-12 13:54:51,904 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 13:54:51,905 - app - INFO - - Processing: Fiorinda Tocchini, FUSION BRASSERIE LTD
+2024-12-12 13:54:51,962 - app - INFO - - Processing: Andy Barnett, Wolverhampton Wanderers
+2024-12-12 13:55:18,321 - app - INFO - Finished Processing: Fiorinda Tocchini, FUSION BRASSERIE LTD
+2024-12-12 13:55:21,702 - app - INFO - Finished Processing: Andy Barnett, Wolverhampton Wanderers
+2024-12-12 13:55:21,702 - app - INFO - Completed processing mini batch starting at index 4
+2024-12-12 13:55:21,722 - app - INFO - Converting search_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_consumption.parquet
+2024-12-12 13:55:21,841 - app - INFO - Converting email_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_search_history.parquet
+2024-12-12 13:55:21,919 - app - INFO - Completed batch of searches
+2024-12-12 13:55:21,920 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-12 13:55:21,920 - app - INFO - Start email processing...
+2024-12-12 13:55:21,920 - app - INFO - No emails sent. Today is Thursday, which is not a designated day: ['Wednesday', 'Friday'] for ThinkVideo
+2024-12-12 13:55:21,920 - app - INFO - Processing complete for : ThinkVideo
+2024-12-12 13:55:21,930 - app - ERROR - The following models are present in consumption data but missing from pricing data: None

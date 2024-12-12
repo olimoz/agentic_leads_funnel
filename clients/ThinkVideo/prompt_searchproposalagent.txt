@@ -1,4 +1,4 @@
-Use the below text to propose two web searches to be submitted as prompts to an AI web search tool, Perplexity. Since these are prompts you can be more descriptive than a google search but the limit is 350 characters. The objective is to discover recent case studies, events, blogs, and news specific to this person and business in the period {search_period}.
+Use the below text to propose two web searches to be submitted as prompts to an AI web search tool, Perplexity. Since these are prompts you can be more descriptive than a google search but the limit is 350 characters. The objective is to discover recent case studies, completed projects, customer success stories, and launches specific to this person and business in the period {search_period}.
 
 Here is the search target description:
 

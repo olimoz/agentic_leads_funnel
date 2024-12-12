@@ -1,0 +1,47 @@
+2024-12-12 12:00:04,086 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-12 12:00:04,089 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-12 12:00:04,091 - app - INFO - Checking pricing for model: tavily
+2024-12-12 12:00:04,092 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-12 12:00:04,094 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-12 12:00:04,097 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-12 12:00:04,100 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-12 12:00:04,100 - app - INFO - Pricing sequentiality check completed.
+2024-12-12 12:00:04,135 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-12 12:00:04,262 - app - INFO - Created 1 client tasks
+2024-12-12 12:00:04,298 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:00:07,225 - app - INFO - Batch cost saved to ThinkVideo_20241201_20241211.xlsx
+2024-12-12 12:00:07,226 - app - INFO - Total cost for the period: $0.73
+2024-12-12 12:00:07,227 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-12 12:00:10,976 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-12 12:00:11,037 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-12 12:00:11,038 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 608 records
+2024-12-12 12:00:12,533 - app - INFO - There are 7971 valid candidates for search.
+2024-12-12 12:00:12,552 - app - INFO - As instructed, this batch will process 6.
+2024-12-12 12:00:12,553 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:00:12,553 - app - INFO - - Processing: Jake Conway, Salcombe Distilling Company
+2024-12-12 12:00:12,597 - app - INFO - - Processing: Tori Davies, BLYTH GROUP
+2024-12-12 12:00:45,055 - app - INFO - Finished Processing: Tori Davies, BLYTH GROUP
+2024-12-12 12:00:46,168 - app - INFO - Finished Processing: Jake Conway, Salcombe Distilling Company
+2024-12-12 12:00:46,169 - app - INFO - Completed processing mini batch starting at index 0
+2024-12-12 12:00:46,170 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:00:46,172 - app - INFO - - Processing: Lisa Greig, Shape Land & Property
+2024-12-12 12:00:46,226 - app - INFO - - Processing: Al Sakickas, MadeBrave
+2024-12-12 12:01:12,844 - app - INFO - Finished Processing: Lisa Greig, Shape Land & Property
+2024-12-12 12:01:15,609 - app - INFO - Finished Processing: Al Sakickas, MadeBrave
+2024-12-12 12:01:15,610 - app - INFO - Completed processing mini batch starting at index 2
+2024-12-12 12:01:15,610 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:01:15,611 - app - INFO - - Processing: Jo Comino, Borderlines Film Festival CIC
+2024-12-12 12:01:15,643 - app - INFO - - Processing: Beccy Gibson, Tempt
+2024-12-12 12:01:43,875 - app - INFO - Finished Processing: Beccy Gibson, Tempt
+2024-12-12 12:01:44,796 - app - INFO - Finished Processing: Jo Comino, Borderlines Film Festival CIC
+2024-12-12 12:01:44,797 - app - INFO - Completed processing mini batch starting at index 4
+2024-12-12 12:01:44,825 - app - INFO - Converting search_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_consumption.parquet
+2024-12-12 12:01:44,931 - app - INFO - Converting email_date in df to datetime64[us] to match /home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/clients/ThinkVideo/df_search_history.parquet
+2024-12-12 12:01:45,012 - app - INFO - Completed batch of searches
+2024-12-12 12:01:45,013 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-12 12:01:45,013 - app - INFO - Start email processing...
+2024-12-12 12:01:45,013 - app - INFO - No emails sent. Today is Thursday, which is not a designated day: ['Wednesday', 'Friday'] for ThinkVideo
+2024-12-12 12:01:45,013 - app - INFO - Processing complete for : ThinkVideo
+2024-12-12 12:01:45,024 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:02:57,271 - app - INFO - Batch cost saved to ThinkVideo_20240830_20241212.xlsx
+2024-12-12 12:02:57,272 - app - INFO - Total cost for the period: $20.02

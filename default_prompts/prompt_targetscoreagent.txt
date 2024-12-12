@@ -4,7 +4,7 @@ In order to give us the detail we need for marketing, a high scoring text will g
 Your task is to score the text for how well it meets our objective. This 'Target Score' is additive and is applied as per the following metrics:
 
 A. Text mentions case studies specifically relating to the person and company in the period: +3.
-B. Text mentions news, events and blogs (other than case studies) specifically relating to the person working the company in the period: +2.
+B. Text mentions project success, project success, launch or customer success story (other than case studies) specifically relating to the person working the company in the period: +2.
 C. Text gives details of activities which the target person engaged in, during the period: +1.
 D. Text mentions a recent fact about the person or business which is clearly deserving of a social media video, regardless of precise period: +4.
 

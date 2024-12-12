@@ -1,0 +1,362 @@
+2024-12-12 12:09:05,274 - app - INFO - Checking pricing for model: llama-3.1-sonar-small-128k-online
+2024-12-12 12:09:05,276 - app - INFO - Checking pricing for model: gpt-4o-mini-2024-07-18
+2024-12-12 12:09:05,278 - app - INFO - Checking pricing for model: tavily
+2024-12-12 12:09:05,280 - app - INFO - Checking pricing for model: gpt-4o-2024-05-13
+2024-12-12 12:09:05,281 - app - INFO - Checking pricing for model: gpt-4o-2024-08-06
+2024-12-12 12:09:05,283 - app - INFO - Checking pricing for model: gpt-4o
+2024-12-12 12:09:05,284 - app - INFO - Checking pricing for model: get_email_candidates
+2024-12-12 12:09:05,285 - app - INFO - Pricing sequentiality check completed.
+2024-12-12 12:09:05,315 - app - INFO - Loaded config for client: ThinkVideo
+2024-12-12 12:09:05,435 - app - INFO - Created 1 client tasks
+2024-12-12 12:09:05,465 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:09:08,975 - app - INFO - Batch cost saved to ThinkVideo_20241201_20241212.xlsx
+2024-12-12 12:09:08,976 - app - INFO - Total cost for the period: $0.98
+2024-12-12 12:09:08,976 - app - INFO - Configuring pipeline for: ThinkVideo 
+2024-12-12 12:09:12,468 - app - INFO - Loaded df_search_tasks for: ThinkVideo 
+2024-12-12 12:09:12,560 - app - INFO - DataFrame loaded from df_search_history.parquet
+2024-12-12 12:09:12,561 - app - INFO - Loaded df_search_history for: ThinkVideo. Length: 620 records
+2024-12-12 12:09:13,963 - app - INFO - There are 7971 valid candidates for search.
+2024-12-12 12:09:13,981 - app - INFO - As instructed, this batch will process 6.
+2024-12-12 12:09:13,982 - app - INFO - Processing mini batch starting at index 0. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:09:13,982 - app - INFO - - Processing: Sana Tang, Balfor Recruitment Group
+2024-12-12 12:09:14,023 - app - INFO - - Processing: Faye Grant, Pure Luxuries London
+2024-12-12 12:09:17,023 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:18,471 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:20,496 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:23,251 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:24,531 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:28,598 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:29,476 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:34,117 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:34,216 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:40,341 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:42,495 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:42,500 - app - ERROR - Error processing mini batch starting at index 0:
+Error type: RetryError
+Error message: RetryError[<Future at 0x7f0b10293220 state=finished raised TypeError>]
+Traceback:
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 65, in run
+    await self.app.handle_error(self.app.logger, logging.ERROR, msg)
+TypeError: object NoneType can't be used in 'await' expression
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/client_manager.py", line 244, in process_client
+    results = await asyncio.gather(*tasks)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 73, in process
+    search_event_type, consumption = await self.get_search_event_type(candidate, search_limiter_perplexity)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 139, in get_search_event_type
+    return await self.perplexity_agent.run(query)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/__init__.py", line 419, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7f0b10293220 state=finished raised TypeError>]
+
+2024-12-12 12:09:42,500 - app - INFO - Processing mini batch starting at index 2. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:09:42,501 - app - INFO - - Processing: James Osborne, Mars Veterinary Health
+2024-12-12 12:09:42,558 - app - INFO - - Processing: George Webb, Liquid Gas UK
+2024-12-12 12:09:46,489 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:46,798 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:51,402 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:51,524 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:55,656 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:56,298 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:09:57,524 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:00,812 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:03,908 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:06,454 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:08,368 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:12,111 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:12,113 - app - ERROR - Error processing mini batch starting at index 2:
+Error type: RetryError
+Error message: RetryError[<Future at 0x7f0b102fb520 state=finished raised TypeError>]
+Traceback:
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 65, in run
+    await self.app.handle_error(self.app.logger, logging.ERROR, msg)
+TypeError: object NoneType can't be used in 'await' expression
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/client_manager.py", line 244, in process_client
+    results = await asyncio.gather(*tasks)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 73, in process
+    search_event_type, consumption = await self.get_search_event_type(candidate, search_limiter_perplexity)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 139, in get_search_event_type
+    return await self.perplexity_agent.run(query)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/__init__.py", line 419, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7f0b102fb520 state=finished raised TypeError>]
+
+2024-12-12 12:10:12,114 - app - INFO - Processing mini batch starting at index 4. Batch Size: 6. Mini Batch Size: 2
+2024-12-12 12:10:12,114 - app - INFO - - Processing: Lisa Ventura MBE, Cyber Security Unity (formerly the UK Cyber Security Association - UKCSA)
+2024-12-12 12:10:12,144 - app - INFO - - Processing: Jason Band, Orange50 Creative
+2024-12-12 12:10:14,136 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:15,983 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:16,461 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:20,071 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:21,509 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:25,807 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:27,736 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:31,339 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:32,683 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:36,677 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:41,270 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:44,330 - app - ERROR - Error occurred in function 'run' in file '/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py' at line 65
+Error message: 40
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+2024-12-12 12:10:44,334 - app - ERROR - Error processing mini batch starting at index 4:
+Error type: RetryError
+Error message: RetryError[<Future at 0x7f0b102a1300 state=finished raised TypeError>]
+Traceback:
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 38, in run
+    print(f"Perp citations: {response.additional_kwargs['citations']}")
+KeyError: 'citations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/agents/perplexity_agent.py", line 65, in run
+    await self.app.handle_error(self.app.logger, logging.ERROR, msg)
+TypeError: object NoneType can't be used in 'await' expression
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/client_manager.py", line 244, in process_client
+    results = await asyncio.gather(*tasks)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 73, in process
+    search_event_type, consumption = await self.get_search_event_type(candidate, search_limiter_perplexity)
+  File "/home/oliver/MindSearch/mindsearch/agent/agent_candidate_search/core/candidate_pipeline.py", line 139, in get_search_event_type
+    return await self.perplexity_agent.run(query)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/home/oliver/anaconda3/envs/langgraph/lib/python3.10/site-packages/tenacity/__init__.py", line 419, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7f0b102a1300 state=finished raised TypeError>]
+
+2024-12-12 12:10:44,335 - app - INFO - Saved batch search results to : df_search_history.parquet
+2024-12-12 12:10:44,335 - app - INFO - Start email processing...
+2024-12-12 12:10:44,336 - app - INFO - No emails sent. Today is Thursday, which is not a designated day: ['Wednesday', 'Friday'] for ThinkVideo
+2024-12-12 12:10:44,336 - app - INFO - Processing complete for : ThinkVideo
+2024-12-12 12:10:44,350 - app - ERROR - The following models are present in consumption data but missing from pricing data: None
+2024-12-12 12:12:02,629 - app - INFO - Batch cost saved to ThinkVideo_20240830_20241212.xlsx
+2024-12-12 12:12:02,630 - app - INFO - Total cost for the period: $20.14

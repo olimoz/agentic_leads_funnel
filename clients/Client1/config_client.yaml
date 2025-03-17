@@ -1,5 +1,5 @@
 # Configuration folder for the web search client
-CLIENT: "ThinkVideo"
+CLIENT: "Client1"
 
 # The LLM chosen for search suggestions can be simple, cheap and fast
 LLM_SEARCH: "gpt-4o-mini"

@@ -7,9 +7,3 @@ We have two decades of experience, for example <insert relevant experience here>
 
 Regards,
 
-Martin Chambers
-Lead Video Strategist at
-Think Video
-(M) +44 7837 773682
-
-"Humanise Your Brand"
